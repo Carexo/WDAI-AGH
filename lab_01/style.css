@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  background-color: rgba(230, 230, 230);
+}
+
+.author {
+  font-weight: 800;
+  color: blue;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+.squares-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
