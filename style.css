@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #1A80E5;
+    --dark: #050505;
+    --gray: #F0F4EFFF;
+    --dark-gray: #e6e6e6;
+    --gray-text: #697386;
+    --secondary-color: #FFB7FF;
+    --tertiary-color: #573280;
+}
+
+html {
+    font-family: "Manrope", sans-serif;
+    box-sizing: border-box;
+    background-color: var(--gray);
+    color: var(--dark);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 100%;
+    padding: 1rem 1rem;
+    flex: 1;
+    overflow: auto;
+}
+
+footer {
+    color: var(--gray-text);
+    font-size: 0.75rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+button {
+    border-color: transparent;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.button-primary {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.button-secondary {
+    background-color: var(--dark-gray);
+}
+
+
+#game-board {
+    justify-content: center;
+    display: grid;
+    gap: 0.3rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.memory-box {
+    aspect-ratio: 1/1;
+    width: 100%;
+    perspective: 1000px;
+    max-width: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+.flip-container > div {
+    transform: rotateY(180deg);
+
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    background-color: lightgray;
+    transform: rotateY(180deg);
+}
+
+.front {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.score {
+    text-align: center;
+}
+
+#score {
+    font-weight: bold;
+}
+
+
+#configurations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+
+.new-configuration-button {
+    margin-top: 2rem;
+    font-size: 0.925rem;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 150px;
+    width: 100%;
+    text-align: center;
+}
+
+.control-button {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.configuration.selected {
+    border: 2px solid var(--tertiary-color);
+}
+
+.configuration {
+    position: relative;
+    padding: 1rem 1.75rem;
+    background-color: #EFEFEF;
+    border: 2px solid #dedede;
+    font-size: 0.85rem;
+}
+
+.delete-configuration {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: -0.3rem;
+    right: -0.3rem;
+    border-radius: 50%;
+    z-index: 5;
+    border: 2px solid var(--secondary-color);
+    background-color: #EFEFEF;
+    padding: 0.2rem;
+}
+
+#configuration-dialog {
+    margin-top: 0;
+    top: 30vh;
+    padding: 0;
+    border: none;
+    border-radius: 0.75rem;
+
+    -webkit-box-shadow: 0px 10px 21px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 10px 21px -10px rgba(66, 68, 90, 1);
+    box-shadow: 0px 10px 21px -10px rgba(66, 68, 90, 1);
+}
+
+#configuration-dialog form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 2.75rem;
+}
+
+#close-dialog {
+    padding: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+
+    z-index: 9999;
+    background-color: transparent;
+}
+
+#add-configuration {
+    font-size: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--gray-text);
+}
+
+.input-group label {
+    font-weight: 600;
+}
+
+.input-group input {
+    height: 2.25rem;
+    min-width: 10rem;
+    border: 1px solid var(--gray);
+    box-shadow: 0px 1px 2px rgba(55, 65, 81, 0.08);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.final-message {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.screen-reader-text {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+@media (min-width: 600px) {
+    #game-board {
+        gap: 0.75rem;
+    }
+
+    .options {
+        flex-direction: row;
+        gap: 5rem;
+    }
+}
