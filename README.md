@@ -4,6 +4,10 @@ A fun and interactive memory game built with JavaScript, HTML, and CSS using the
 architecture. The objective of the game is to match pairs of identical images on a custom board, with the ability to
 save, reload, and delete configurations.
 
+### [Live Demo](https://memory-game-wdai.netlify.app/)
+
+Try out the game online by visiting the live demo link above!
+
 ## Features
 
 - **Custom Board Sizes**: Choose a custom board size to tailor the difficulty and layout of the game.
@@ -44,9 +48,10 @@ How to Play
 
 Configuration Management
 
-- Creating a New Configuration: Select a custom board size before starting the game. Your configuration will be saved
+- **Creating a New Configuration**: Select a custom board size before starting the game. Your configuration will be
+  saved
   automatically and reloaded when you refresh the browser.
-- Deleting a Configuration: Navigate to the configuration management section to remove any saved configurations.
+- **Deleting a Configuration**: Navigate to the configuration management section to remove any saved configurations.
 
 Built With
 
