@@ -207,10 +207,6 @@ export class Model {
   }
 
   clickConfiguration(id, isDelete) {
-    if (id === this.selectedConfiguration.id) {
-      return;
-    }
-
     if (isDelete) {
       if (confirm("Are you sure you want to delete this configuration ?")) {
         this._configurations = this._configurations.filter(
@@ -220,8 +216,26 @@ export class Model {
           "configurations",
           JSON.stringify(this._configurations),
         );
+
+        if (id === this.selectedConfiguration.id) {
+          this._setSelectedConfiguration(this.configurations[0]);
+
+          this.newGame(
+            this.selectedConfiguration.boardSizeX,
+            this.selectedConfiguration.boardSizeY,
+          );
+
+          this.refreshConfigurations();
+          this.refreshBoard();
+          this.handleGameStatusChange();
+        }
+
         this.refreshConfigurations();
       }
+      return;
+    }
+
+    if (id === this.selectedConfiguration.id) {
       return;
     }
 
@@ -263,6 +277,7 @@ export class Model {
 
   _setSelectedConfiguration(configuration) {
     this.selectedConfiguration = configuration;
+
     localStorage.setItem(
       "selected_configuration",
       JSON.stringify(configuration),
