@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+}
+
+canvas {
+    background-color: gray;
+    background-image: url("./images/board-bg.jpg");
+    background-size: cover;
+    cursor: none;
+}
+
+dialog {
+    background-color: #312020;
+    color: white;
+}
+
+.aim-cursor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

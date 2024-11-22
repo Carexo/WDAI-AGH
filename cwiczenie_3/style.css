@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+main {
+    margin: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.products {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 200px;
+    height: 350px;
+    -webkit-box-shadow: 0px 0px 24px -14px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -14px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -14px rgba(66, 68, 90, 1);
+}
+
+.product img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
