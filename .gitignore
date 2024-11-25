@@ -2,3 +2,5 @@
 
 # JetBrains IDEs
 .idea
+node_modules
+package-lock.json
