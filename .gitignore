@@ -3,4 +3,6 @@
 # JetBrains IDEs
 .idea
 node_modules
-package-lock.json
+bookstore/package-lock.json
+.env
+*.sqlite
